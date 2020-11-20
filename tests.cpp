@@ -4,8 +4,8 @@
 #include <sstream>
 #include <cstring>
 
-/*
-TEST_CASE("Personne1") {
+
+/*TEST_CASE("Personne1") {
 	  const char * nom = "corleone";
     Personne zz(nom);
 
@@ -14,22 +14,21 @@ TEST_CASE("Personne1") {
     zz.setNom("vito");
     
     REQUIRE("vito" == zz.getNom());
-} */
+} 
 
-/*
 TEST_CASE("Personne2") {
     const char * nom = "frank";
     const Personne zz(nom);
 
     REQUIRE(nom     == zz.getNom());
-} */
+} 
 
-/*
+
 TEST_CASE("Personne3") {
     REQUIRE("INCONNU" == INCONNU.getNom());
-}*/
+}
 
-/*
+
 TEST_CASE("Gangster") {
   const Gangster parrain;
         Gangster accolyte1;
@@ -44,20 +43,20 @@ TEST_CASE("Gangster") {
   CHECK  (accolyte1.getId()+1 == accolyte2.getId());
   CHECK  (1 == accolyte2.getInfluence());
 
-} */
+}*/
 
-/*
+
 TEST_CASE("Chef") {
-   Gangster soldat1; 
-   Chef     lieutenant;
-   Gangster soldat2;
+   Gangster soldat1;
+   Chef     lieutenant; 
+   Gangster soldat2; 
 
    CHECK( 1 == lieutenant.getInfluence());
 
    CHECK(   soldat1.getId()+1 == lieutenant.getId());
    CHECK(lieutenant.getId()+1 == soldat2.getId());
 
-   lieutenant.commande(&soldat1);
+   /*lieutenant.commande(&soldat1);
    CHECK( 11 == lieutenant.getInfluence());
    lieutenant.commande(&soldat2);
    CHECK( 12 == lieutenant.getInfluence());
@@ -67,8 +66,8 @@ TEST_CASE("Chef") {
    CHECK(soldat2.getId()+1 == boss.getId());
    boss.commande(&lieutenant);
 
-   CHECK( 22 == boss.getInfluence());
-} */
+   CHECK( 22 == boss.getInfluence());*/
+} 
 
 /*
 TEST_CASE("Inconnu") {
