@@ -17,14 +17,7 @@ void Personne::setNom(std::string _nom)
 
 Gangster::Gangster() : id(Gangster::nb), inf(1) 
 {
-    std::cout << "Here first ? " << std::endl;
-    std::cout << "id =  " <<id<< std::endl; 
-
-    std::cout << "nb =  " << Gangster::nb<< std::endl; 
-
-    
-    std::cout << "Creation ... " << std::endl; 
-    Gangster::nb = id + 1;
+    Gangster::nb ++;
 }
 
 int Gangster::getId() const
@@ -38,38 +31,18 @@ int Gangster::getInfluence() const
 }
 
 
-Chef::Chef() : id(Gangster::nb), inf(1) 
+Chef::Chef() : Gangster() 
 {}
 
 void Chef::commande(Gangster* _gangster)
 {
     equipe.push_back(_gangster);
-    if (! equipe.size()) inf += 10;
+
+    if (equipe.size() == 1) 
+    {
+        inf = 10;
+    }
 
 
     inf += _gangster->getInfluence();
-
-
 }
-
-
-void Chef::commande(Chef* _gangster)
-{
-    equipe.push_back(_gangster);
-    if (! equipe.size()) inf += 20;
-
-
-    inf = inf + _gangster->getInfluence();
-
-}
-
-int Chef::getId() const
-{
-    return id;
-}
-
-int Chef::getInfluence() const
-{
-    return inf;
-}
-

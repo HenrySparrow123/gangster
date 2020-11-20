@@ -5,7 +5,7 @@
 #include <cstring>
 
 
-/*TEST_CASE("Personne1") {
+TEST_CASE("Personne1") {
 	  const char * nom = "corleone";
     Personne zz(nom);
 
@@ -43,12 +43,13 @@ TEST_CASE("Gangster") {
   CHECK  (accolyte1.getId()+1 == accolyte2.getId());
   CHECK  (1 == accolyte2.getInfluence());
 
-}*/
+}
 
 
 TEST_CASE("Chef") {
    Gangster soldat1;
    Chef     lieutenant; 
+
    Gangster soldat2; 
 
    CHECK( 1 == lieutenant.getInfluence());
@@ -56,7 +57,7 @@ TEST_CASE("Chef") {
    CHECK(   soldat1.getId()+1 == lieutenant.getId());
    CHECK(lieutenant.getId()+1 == soldat2.getId());
 
-   /*lieutenant.commande(&soldat1);
+   lieutenant.commande(&soldat1);
    CHECK( 11 == lieutenant.getInfluence());
    lieutenant.commande(&soldat2);
    CHECK( 12 == lieutenant.getInfluence());
@@ -66,14 +67,14 @@ TEST_CASE("Chef") {
    CHECK(soldat2.getId()+1 == boss.getId());
    boss.commande(&lieutenant);
 
-   CHECK( 22 == boss.getInfluence());*/
+   CHECK( 22 == boss.getInfluence());
 } 
 
-/*
+
 TEST_CASE("Inconnu") {
   InconnuException inconnu;
   CHECK( strcmp(inconnu.what(), "personnalite inconnue")==0);
-}*/
+}
 
 
 /*

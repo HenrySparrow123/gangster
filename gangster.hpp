@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <exception>
 
 
 class Personne{
@@ -22,28 +23,33 @@ const Personne INCONNU("INCONNU");
 
 
 class Gangster{
-    int id;
-    int inf;
+    protected :
+        int id;
+        int inf;
     public :
         Gangster();
-        virtual int getId() const;
-        virtual int getInfluence() const;
+        int getId() const;
+        int getInfluence() const;
 
         static int nb;
 };
 
 class Chef : public Gangster {
-    int id;
-    int inf;
-    std::vector<Gangster*> equipe;
 
     public :
         Chef();
         void commande(Gangster*);
-        void commande(Chef*);
-        virtual int getId() const;
-        virtual int getInfluence() const;
+    std::vector<Gangster*> equipe;
 };
 
+class InconnuException : public std::exception
+{
+    
+    public :
+        virtual const char * what() const noexcept
+        {
+            return "personnalite inconnue";
+        }
+};
 
 #endif

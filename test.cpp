@@ -3,7 +3,9 @@
 int main() 
 {
     Chef lieutenant;
-    std::cout << "Bob = " << lieutenant.getId() << std::endl;
+    std::cout << " avant Bob = " << lieutenant.inf << std::endl;
+    lieutenant.inf ++;
+    std::cout << " apres Bob = " << lieutenant.inf << std::endl;
 
     Gangster Bill;
 
