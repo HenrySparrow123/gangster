@@ -9,6 +9,7 @@
 #include <vector>
 #include <exception>
 #include <sstream>
+#include <algorithm>
 
 
 class Personne{
@@ -88,8 +89,19 @@ class Famille
 
     public :
         void ajouter(Gangster*);
-        void listePersonnes(std::ostream&);
+        void listePersonnes(std::stringstream&);
 
 };
+
+class FoncteurInf {
+    public :
+        bool operator()(Gangster* _gangster1, Gangster* _gangster2)
+        {
+            if (_gangster1<_gangster2) return true;
+            else return false;
+        }
+};
+
+void operator<<(std::stringstream&,Famille);
 
 #endif

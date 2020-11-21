@@ -71,26 +71,32 @@ void Famille::ajouter(Gangster* _gangster)
     membres.push_back(_gangster);
 }
 
-/*std::vector<Gangter*> sortVector(std::vector<Gangster*>_vect)
+void Famille::listePersonnes(std::stringstream& ss)
 {
-    std::vector<Gangster*> res;
-    Gangster * min = _vect.at(0);
-    for (std::vector<Gangster*>::iterator i=_vect.begin(); i!= _vect.end(); ++i)
-    {
-        if (**i < *min) min =
-    }
+    std::vector<std::string> namesList; 
 
-    
-}*/
-
-void Famille::listePersonnes(std::ostream& ss)
-{
     for (std::vector<Gangster*>::iterator i=membres.begin(); i!= membres.end(); ++i)
     {
         if((*i)->getStatut() == true)
         {
-            ss << (*i)->getPersonne().getNom() << ", ";
+            namesList.push_back((*i)->getPersonne().getNom());
         }    
-    } 
+    } //choosing the names that are to be kept
+
+    sort(namesList.begin(),namesList.end()); //sorting alphabetically
+
+    for (int i = 0; i < namesList.size(); ++i)
+    {
+        ss << namesList.at(i) << ", ";   
+    } //putting the names in
+
+    ss.str(ss.str().erase(ss.str().length()-2,ss.str().length())); //cleaning
 }
+
+void operator<<(std::stringstream& ss,Famille _fam)
+{
+    _fam.listePersonnes(ss);
+}
+
+
 
