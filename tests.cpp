@@ -77,14 +77,13 @@ TEST_CASE("Inconnu") {
 }
 
 
-/*
+
 TEST_CASE("Exception") {
   Gangster inconnu;
   
   REQUIRE_THROWS_AS(inconnu.getPersonne(), InconnuException);
-} */
+}
 
-/*
 TEST_CASE("Revelation") {
   Gangster parrain;
   const Personne vito("Vito Corleone");
@@ -94,9 +93,9 @@ TEST_CASE("Revelation") {
   parrain.setPersonne(vito);
   
   CHECK(parrain.getPersonne().equals(Personne("Vito Corleone")));
-} */
+}
 
-/*
+
 TEST_CASE("Comparaison") {
   Gangster g1;
   Gangster g2;
@@ -111,9 +110,8 @@ TEST_CASE("Comparaison") {
   // gangster de plus d'influence
   CHECK( g1  < c );
   CHECK( g2  < c );
-} */
+} 
 
-/*
 void creerFamille(Famille & famille, Gangster*hommes[]) {
   for (int i = 0; i < 10; ++i) {
     hommes[i] = new Gangster();
@@ -131,9 +129,7 @@ void creerFamille(Famille & famille, Gangster*hommes[]) {
   ((Chef*)hommes[12])->commande(hommes[11]);
 }
 
-*/
 
-/*
 TEST_CASE("Famille1A") {
   Famille famille;
   std::stringstream ss;
@@ -148,7 +144,7 @@ TEST_CASE("Famille1A") {
   for(int i =0; i<13; ++i) 
     if (i%4) {
       hommes[i]->setPersonne(Personne(tableau[i]));
-      // std::cout << hommes[i]->getPersonne().getNom() << std::endl;
+      std::cout << hommes[i]->getPersonne().getNom() << std::endl;
   }
 
   //famille.listePersonnes(std::cout);
@@ -159,9 +155,9 @@ TEST_CASE("Famille1A") {
   
   CHECK(attendu.str() == ss.str()); 
   
-} */
+}
 
-/*
+
 TEST_CASE("Famille1B") {
   Famille famille;
   std::stringstream ss;
@@ -185,7 +181,7 @@ TEST_CASE("Famille1B") {
   
   CHECK(attendu.str() == ss.str()); 
 
-} */
+} 
 
 /*
 TEST_CASE("Foncteur") {
